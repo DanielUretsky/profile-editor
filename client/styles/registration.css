@@ -1,0 +1,103 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+.container{
+    position: relative;
+}
+
+
+.registration-card {
+    border-radius: 20px;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, 5%);
+    padding: 55px 59px 38px 59px;
+    width: 500px;
+    height: 650px;
+    background-color: #1E1E1E;
+}
+.registr-header {
+    font-size: 35px;
+    font-weight: 700;
+    color: white;
+}
+
+.registr-subheader {
+    font-weight: 300;
+    color: #706F76;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.registr-card-name {
+    color: #706F76;
+    margin-top: 28px;
+}
+
+.main {
+    margin-top: 12px;
+    background: #2C2C2C;
+    padding: 10px 25px;
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    outline: 0;
+}
+
+.radio-choose {
+    display: flex;
+    justify-content: space-between;
+}
+
+.radio {
+    margin-top: 12px;
+    width: 160px;
+    border: 2px solid #2C2C2C;
+    border-radius: 10px;
+    padding: 10px 25px;
+    font-size: 12px;
+    color: #2C2C2C;
+}
+
+.radio:hover {
+    color:#8769FD;
+    border-color: #8769FD;
+    cursor: pointer;
+}
+
+.regist-button {
+    background: #8769FD;
+    border-radius: 50px;
+    color: #1E1E1E;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+    margin-top: 27px;
+}
+
+.regist-button:hover {
+    background: white;
+}
+
+.have-account {
+    margin-top: 18px;
+    font-weight: 300;
+    color: #706F76;
+    font-size: 12px;
+    text-align: center;
+}
+
+.have-account a {
+    color: #8769FD;
+    text-decoration: none;
+}
