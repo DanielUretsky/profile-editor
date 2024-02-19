@@ -1,12 +1,13 @@
+require('dotenv').config();
+
 const express = require('express');
 const app = express();
-const PORT = 3000;
 
+const PORT = process.env.PORT || 3000;
 const connectToDB = require('./configs/connectToDB');
 
-const loginRouter = require('./router/loginRouter');
-const registrationRouter = require('./router/loginRouter');
-const userRouter = require('./router/loginRouter');
+const authRouter = require('./router/authRouter');
+const userRouter = require('./router/userRouter');
 
 //configs
 connectToDB();
@@ -15,8 +16,7 @@ connectToDB();
 app.use(express.json());
 
 //routes
-app.use('/registration', registrationRouter);
-app.use('/login', loginRouter);
+app.use('/', authRouter);
 app.use('/user', userRouter);
 
 //listen
