@@ -1,3 +1,6 @@
+
+@import url(globalVariables.css);
+
 *{
     margin: 0;
     padding: 0;
@@ -8,7 +11,6 @@
 .container{
     position: relative;
 }
-
 
 .registration-card {
     border-radius: 20px;
@@ -30,18 +32,19 @@
 .registr-subheader {
     font-weight: 300;
     color: #706F76;
-    margin-top: 15px;
+    margin-top: 7px;
     font-size: 14px;
 }
 
 .registr-card-name {
+    display: block;
     color: #706F76;
-    margin-top: 28px;
+    margin-top: 15px;
 }
 
 .main {
-    margin-top: 12px;
-    background: #2C2C2C;
+    margin-top: 7px;
+    background: var(--main-color);
     padding: 10px 25px;
     width: 100%;
     border-radius: 10px;
@@ -58,23 +61,30 @@
 }
 
 .radio {
+    display: flex;
+    align-items: center;
     margin-top: 12px;
     width: 160px;
-    border: 2px solid #2C2C2C;
+    border: 2px solid var(--main-color);
     border-radius: 10px;
     padding: 10px 25px;
     font-size: 12px;
-    color: #2C2C2C;
+    color: var(--main-color);
 }
 
 .radio:hover {
-    color:#8769FD;
-    border-color: #8769FD;
+    color:var(--color);
+    border-color: var(--color);
     cursor: pointer;
 }
 
+.radio-btn {
+    margin-right: 10px;
+}
+
+
 .regist-button {
-    background: #8769FD;
+    background: var(--color);
     border-radius: 50px;
     color: #1E1E1E;
     padding: 10px;
@@ -97,7 +107,12 @@
     text-align: center;
 }
 
-.have-account a {
-    color: #8769FD;
+.have-account span {
+    color: var(--color);
     text-decoration: none;
+    cursor: pointer;
+}
+
+.radio-btn {
+    accent-color: var(--color);
 }

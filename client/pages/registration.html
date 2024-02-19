@@ -14,19 +14,21 @@
         <div class="registration-card">
             <div class="registr-header">Create an account</div>
             <div class="registr-subheader">to get started, you need to create an account</div>
-            <div class="registr-card-name">Email</div>
-            <input type="text" class="main">
-            <div class="registr-card-name">Password</div>
-            <input type="password" class="main">
-            <div class="registr-card-name">Re-enter password</div>
-            <input type="password" class="main">
-            <div class="registr-card-name">Choose gender</div>
-            <div class="radio-choose">
-                <div class="radio">Male</div>
-                <div class="radio">Female</div>
-            </div>
+            <label for="name" class="registr-card-name">User name</label>
+            <input type="text" class="main" name="name" placeholder="Enter your name...">
+            <label for="email" class="registr-card-name">Email</label>
+            <input type="text" class="main" name="email" placeholder="Enter email @...">
+            <label for="password" class="registr-card-name">Password</label>
+            <input type="password" class="main" name="password">
+            <label for="re-pass" class="registr-card-name">Re-enter password</label>
+            <input type="password" class="main" name="re-pass">
+            <label for="gender" class="registr-card-name">Choose gender</label>
+            <label class="radio-choose">
+                <div class="radio"><input type="radio" value="Male" class="radio-btn" name="gender">Male</div>
+                <div class="radio"><input type="radio" value="Female" class="radio-btn" name="gender">Female</div>
+            </label>
             <button class="regist-button">Registration</button>
-            <div class="have-account">Have already an account?<a href="#">Login here</a></div>
+            <div class="have-account">Have already an account? <span>Login here</span></div>
         </div>
     </div>
 </body>
