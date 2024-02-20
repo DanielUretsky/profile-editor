@@ -9,7 +9,11 @@
 }
 
 .container{
+    display: flex;
+    width: 100%;
+    height: 100vh;
     position: relative;
+    background-color: #000;
 }
 
 .registration-card {
@@ -20,7 +24,7 @@
     transform: translate(-50%, 5%);
     padding: 55px 59px 38px 59px;
     width: 500px;
-    height: 650px;
+    height: auto;
     background-color: #1E1E1E;
 }
 .registr-header {
@@ -108,6 +112,7 @@
 }
 
 .have-account span {
+    position: relative;
     color: var(--color);
     text-decoration: none;
     cursor: pointer;
@@ -116,3 +121,4 @@
 .radio-btn {
     accent-color: var(--color);
 }
+
