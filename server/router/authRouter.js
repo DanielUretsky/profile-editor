@@ -6,7 +6,7 @@ const userBLL = require('../BLL/userBLL');
 router.post('/registration', async (req, res) => {
     try {
         const userData = req.body;
-        const response = await userBLL.registration(userData)
+        const response = await userBLL.registration(userData);
 
         res.status(201).send(response)
     } catch (err) {
@@ -20,7 +20,6 @@ router.post('/login', async (req, res) => {
         const {email, password} = req.body;
         const response = await userBLL.login(email, password);
 
-        console.log(response);
         res.send(response)
     } catch (err) {
         console.log(err);
