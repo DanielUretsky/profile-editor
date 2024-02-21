@@ -2,6 +2,7 @@ require('dotenv').config();
 
 const express = require('express');
 const app = express();
+const cors = require('cors');
 
 const PORT = process.env.PORT || 3000;
 const connectToDB = require('./configs/connectToDB');
@@ -14,10 +15,11 @@ connectToDB();
 
 //middlewares
 app.use(express.json());
+app.use(cors());
 
 //routes
 app.use('/', authRouter);
-app.use('/user', userRouter);
+app.use('/users', userRouter);
 
 //listen
 app.listen(PORT, () => {
