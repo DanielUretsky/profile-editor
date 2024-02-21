@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const userBLL = require('../BLL/userBLL');
+const userBLL = require('../BLL/usersBLL');
 
 router.post('/registration', async (req, res) => {
     try {
