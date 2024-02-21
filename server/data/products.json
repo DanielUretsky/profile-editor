@@ -1,0 +1,32 @@
+{
+    "products": [
+        {   "id": 1,
+            "type": "AvatarFrame",
+            "name": "Flame",
+            "price": 30,
+            "properties": {
+                "css": {
+
+                }
+            }
+        },
+        {
+            "id": 2,
+            "name": "Skeleton background",
+            "type": "Profile background",
+            "price": 30,
+            "properties": {
+                "src": ""
+            }
+        },
+        {
+            "id": 3,
+            "name": "Gradien parrot",
+            "type": "Profile badge",
+            "price": 20,
+            "properties": {
+                "src": "https://i.gifer.com/6oa.gif"
+            }
+        }
+    ]
+}
