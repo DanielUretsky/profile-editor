@@ -6,7 +6,8 @@ const userSchema = new mongoose.Schema({
     password: {type: String, required: true},
     gender: {type: String, required: true},
     registrationDate: {type: Date, default: Date.now},
-    coinsBalance: {type: Number, default: 100}
+    coinsBalance: {type: Number, default: 100},
+    purchases: [{type: mongoose.Schema.Types.ObjectId, ref: 'Purchase'}]
 }, {
     versionKey: false,
     strict: true
@@ -14,4 +15,4 @@ const userSchema = new mongoose.Schema({
 
 const User = mongoose.model("user", userSchema, "users");
 
-module.exports = User;
+module.exports = User; 
