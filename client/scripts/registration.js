@@ -6,6 +6,7 @@ const logOutBtn = document.querySelector('.regist-button');
 const inputs = document.querySelectorAll('input');
 const labels = document.querySelectorAll('label');
 const logOut = document.createElement('span');
+const parent = document.querySelector('.registration-card');
 
 
 const changes = function() {
@@ -18,7 +19,8 @@ const changes = function() {
     const logInBtn = document.createElement('button');
     logInBtn.classList.add('regist-button');
     logInBtn.textContent = 'logIn';
-    document.querySelector('.registration-card').append(logInBtn);
+    parent.append(logInBtn);
+    parent.insertBefore(logInBtn, marker);
     
     if(logInBtn) {
         logOutBtn.remove();
