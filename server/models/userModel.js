@@ -7,7 +7,6 @@ const userSchema = new mongoose.Schema({
     gender: {type: String, required: true},
     registrationDate: {type: Date, default: Date.now},
     coinsBalance: {type: Number, default: 100},
-    purchases: [{type: mongoose.Schema.Types.ObjectId, ref: 'Purchase'}]
 }, {
     versionKey: false,
     strict: true
