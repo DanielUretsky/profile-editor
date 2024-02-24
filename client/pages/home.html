@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="../styles/home.css">
+    <link rel="stylesheet" href="../styles/home/home.css">
     <title>Home</title>
 </head>
 <body>
@@ -22,7 +22,9 @@
 
                 <div class="profile-initials">
                     <div class="user">
-                        <img src="../assets//icons/user.png" alt="user" id="userAvatar">
+                        <div id="userAvatar">
+
+                        </div>
                         
                         <div class="user-initials">
                             <span id="username"></span>
@@ -43,46 +45,30 @@
                             <span>Your loot</span>
                             <img src="../assets/icons/treasure.png" alt="backpack" class="backpack">
                         </div>
-                        <div class="items">
-                            <div class="item">
-                                s
-                            </div>
-                            <div class="item">
-                                s
-                            </div>
-
-                            <div class="item">
-                                s
-                            </div>
-
-                            <div class="item">
-                                s
-                            </div>
-                            <div class="item">
-                                s
-                            </div>
-                            <div class="item">
-                                s
-                            </div>
-                            <div class="item">
-                                s
-                            </div>
-                            <div class="item">
-                                s
-                            </div>
-                            <div class="item">
-                                s
-                            </div>
-
-                            
-                        
-                            
+                        <div class="items" id="userItems">
+                           
                         </div>
                     </div>
                 </div>
 
             </div>
         </div>
+        <div class="shop">
+            <div class="shop-header">
+                <h1>Shop:</h1>
+            </div>
+            <div class="shop-main">
+                <div class="avatar-frames-conatainer">
+                    <div class="avatar-frames-header">
+                        <h2>Avatar Frames:</h2>
+                    </div>
+                    <div class="avatar-frames-items" id="avatarFramesItems">
+                
+                    </div>
+                </div>
+            </div>
+        </div>
+        
     </main>
 
     <script src="../scripts/home.js"></script>
