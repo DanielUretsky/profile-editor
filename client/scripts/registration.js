@@ -8,6 +8,7 @@ const labels = document.querySelectorAll('label');
 const logOut = document.createElement('span');
 const parent = document.querySelector('.registration-card');
 
+const logInBtn = document.createElement('button');
 
 const changes = function() {
     registrHeader.textContent = 'Please,  LogIN';
@@ -16,7 +17,7 @@ const changes = function() {
     logOut.textContent = ' Registration';
     marker.append(logOut);
 
-    const logInBtn = document.createElement('button');
+
     logInBtn.classList.add('regist-button');
     logInBtn.textContent = 'logIn';
     parent.append(logInBtn);
@@ -24,7 +25,9 @@ const changes = function() {
     
     if(logInBtn) {
         logOutBtn.remove();
-    }
+    } 
+
+
     
 
     inputs.forEach(() => {
@@ -46,6 +49,43 @@ const changes = function() {
     haveAccount.addEventListener('click', changes);
 
 
-logOut.addEventListener('click', () => {
 
+logOut.addEventListener('click', () => {
+    registrHeader.textContent = 'Create an account';
+    registrSubheader.textContent = 'to get started, you need to create an account';
+    marker.textContent = 'Have already an account? ';
+    haveAccount.textContent = ' Login here';
+    marker.append(haveAccount);
+
+    parent.append(logOutBtn);
+    parent.insertBefore(logOutBtn, marker);
+
+    if(logOutBtn) {
+        logInBtn.remove();
+    }
+    addElements();
+
+    
 });
+
+
+
+function addElements() {
+    let labels = ['UserName', 'Re-enter password', 'Choose gender'];
+    
+    for(let i = 0; i < labels.length; i++) {
+        for(let j = 1; j < 2; j++) {
+            let label = document.createElement('label');
+            label.classList.add('registr-card-name');
+            label.textContent = labels[i];
+            parent.append(label);
+            let input = document.createElement('input');
+            input.classList.add('main');
+            parent.append(input);
+        }
+    }
+
+}
+
+
+
