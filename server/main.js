@@ -9,6 +9,7 @@ const connectToDB = require('./configs/connectToDB');
 
 const authRouter = require('./router/authRouter');
 const userRouter = require('./router/userRouter');
+const productsRouter = require('./router/productsRouter');
 
 //configs
 connectToDB();
@@ -20,6 +21,7 @@ app.use(cors());
 //routes
 app.use('/', authRouter);
 app.use('/users', userRouter);
+app.use('/products', productsRouter);
 
 //listen
 app.listen(PORT, () => {
