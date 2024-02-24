@@ -1,24 +1,24 @@
 const express = require('express');
 const router = express.Router();
 
-const userBLL = require('../BLL/usersBLL');
+const authBLL = require('../BLL/authBLL');
 
 router.post('/registration', async (req, res) => {
     try {
         const userData = req.body;
-        const response = await userBLL.registration(userData);
+        const response = await authBLL.registration(userData);
 
         res.status(201).send(response)
     } catch (err) {
         console.log(err);
     }
 
-});
+}); 
 
 router.post('/login', async (req, res) => {
     try {
         const {email, password} = req.body;
-        const response = await userBLL.login(email, password);
+        const response = await authBLL.login(email, password);
 
         res.send(response)
     } catch (err) {
