@@ -1,19 +1,20 @@
 {
     "products": [
-        {   "id": 1,
-            "type": "AvatarFrame",
-            "name": "Flame",
-            "price": 30,
+        {
+            "id": 1,
+            "type": "avatarFrame",
+            "name": "Purple Neon",
+            "price": 20,
             "properties": {
                 "css": {
-
+                    "box-shadow": "0 0 .1rem #fff, 0 0 .1rem #fff, 0 0 .1rem #bc13fe, 0 0 0.1rem #bc13fe, 0 0 0.7rem #bc13fe, inset 0 0 .2rem #bc13fe"
                 }
             }
         },
         {
             "id": 2,
+            "type": "profileBackground",
             "name": "Skeleton background",
-            "type": "Profile background",
             "price": 30,
             "properties": {
                 "src": ""
@@ -21,12 +22,45 @@
         },
         {
             "id": 3,
+            "type": "ProfileBadge",
             "name": "Gradien parrot",
-            "type": "Profile badge",
             "price": 20,
             "properties": {
                 "src": "https://i.gifer.com/6oa.gif"
             }
+        },
+        {
+            "id": 4,
+            "type": "avatarFrame",
+            "name": "Red Neon",
+            "price": 12,
+            "properties": {
+                "css": {
+                    "box-shadow": "0 0 .1rem #fff, 0 0 .1rem #fff, 0 0 .1rem #da0000, 0 0 0.1rem #da0000, 0 0 0.7rem #da0000, inset 0 0 .2rem #da0000"
+                }
+            }
+        },
+        {
+            "id": 5,
+            "type": "avatarFrame",
+            "name": "Green Neon",
+            "price": 15,
+            "properties": {
+                "css": {
+                    "box-shadow": "0 0 .1rem #fff, 0 0 .1rem #fff, 0 0 .1rem #23f534, 0 0 0.1rem #23f534, 0 0 0.7rem #23f534, inset 0 0 .2rem #23f534"
+                }
+            }
+        },
+        {
+            "id": 5,
+            "type": "avatarFrame",
+            "name": "Blue Neon",
+            "price": 22,
+            "properties": {
+                "css": {
+                    "box-shadow": "0 0 .1rem #fff, 0 0 .1rem #fff, 0 0 .1rem #2723f5, 0 0 0.1rem #2723f5, 0 0 0.7rem #2723f5, inset 0 0 .2rem #2723f5"
+                }
+            } 
         }
     ]
 }
