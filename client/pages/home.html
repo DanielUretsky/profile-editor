@@ -12,7 +12,7 @@
 </head>
 <body>
     <main>
-        <div class="bg-layot">
+        <div class="bg-layot" id="profileBgLayout">
             <header>
                 <h2>Home</h2>
                 <img src="../assets/icons/logout.png" alt="logout" id="logoutBtn">
@@ -27,7 +27,10 @@
                         </div>
                         
                         <div class="user-initials">
-                            <span id="username"></span>
+                            <div class="username" id="usernameDiv">
+                                <span id="username"></span>
+                            </div>
+                            
                             <span id="email"></span>
                             <span id="gender"></span>
                         </div>
@@ -42,7 +45,7 @@
 
                     <div class="profile-purchases">
                         <div class="purchases-header">
-                            <span>Your loot</span>
+                            
                             <img src="../assets/icons/treasure.png" alt="backpack" class="backpack">
                         </div>
                         <div class="items" id="userItems">
@@ -66,11 +69,26 @@
                 
                     </div>
                 </div>
+                <div class="profile-backgrounds-conatainer">
+                    <div class="profile-backgrounds-header">
+                        <h2>Profile Backgrounds:</h2>
+                    </div>
+                    <div class="profile-backgrounds-items" id="profileBackgroundItems">
+                        
+                    </div>
+                </div>
+                <div class="profile-badges-conatainer">
+                    <div class="profile-badges-header">
+                        <h2>Profile Badges:</h2>
+                    </div>
+                    <div class="profile-badges-items" id="profileBadgesItems">
+                       
+                    </div>
+                </div>
             </div>
         </div>
         
     </main>
-
-    <script src="../scripts/home.js"></script>
+    <script type="module" src="../scripts/home.js"></script>
 </body>
 </html>
