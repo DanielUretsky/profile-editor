@@ -9,24 +9,25 @@
 }
 
 body {
-    height: 130vh;
+    height: 140vh;
     background-color: rgb(100, 100, 100);
 
     display: flex;
     align-items: center;
-    justify-content: center;
-    
+    justify-content: center;  
 }
 
 main {
     width: 70%;
-    height: 120vh;
+    height: 130vh;
 
     background-color: var(--main-color);
 }
 
 .bg-layot {
-    box-shadow: 0px -22px 30px -10px rgba(0,0,0,0.75) inset;
+    box-shadow: 0px -50px 80px -10px rgba(0, 0, 0, 0.884) inset;
+    background-position: center;
+    background-size: cover;
 }
 
 header {
@@ -55,13 +56,10 @@ header h2 {
 }
 
 .profile {
-    width: 100%;
+    width: 80%;
     height: 350px;
-
+    margin: auto;
     display: flex;
-    justify-content: space-between;
-
-
 }
 
 .profile-initials {
@@ -70,19 +68,15 @@ header h2 {
 
     display: flex;
     align-items: center;
-    justify-content: center;
-   
 }
 
 .user {
-    width: 300px;
+    min-width: 310px;
     height: 180px;
 
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    
-   
+    justify-content: space-between; 
 }
 
 .user #userAvatar {
@@ -94,14 +88,7 @@ header h2 {
     background-repeat: no-repeat;
     background-position: center;
     
-    /* box-shadow: 0 0 .1rem #fff,
-    0 0 .1rem #fff,
-    0 0 .1rem #bc13fe,
-    0 0 0.1rem #bc13fe,
-    0 0 0.7rem #bc13fe,
-    inset 0 0 .2rem #bc13fe;  */
-
-     box-shadow: 0 0 .1rem #fff, 0 0 .1rem #fff, 0 0 .1rem #2723f5, 0 0 0.1rem #2723f5, 0 0 0.7rem #2723f5, inset 0 0 .2rem #2723f5; 
+    box-shadow: 0 0 .1rem #fff, 0 0 .1rem #fff, 0 0 .1rem #2723f5, 0 0 0.1rem #2723f5, 0 0 0.7rem #2723f5, inset 0 0 .2rem #2723f5; 
 }
 
 .user .user-initials {
@@ -112,34 +99,40 @@ header h2 {
     flex-direction: column;
     justify-content: center;
 
-    color: white;
+    color: rgb(204, 204, 204);
+    text-shadow: rgb(0, 0, 0) 1px 0 10px;
+}
+
+.username {
+    display: flex;
 }
 
 #username {
     font-size: 25px;
 }
 
+.username-image {
+    width: 30px;
+    height: 30px;
+}
+
 .profile-info {
-    width: 500px;
+    width: 100%;
     height: 350px;
 
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    align-items: center;
-
-    
-  
+    align-items: flex-end;
 }
 
 .profile-balance {
-    width: 100%;
+    width: 500px;
     height: 80px;
 
     display: flex;
     align-items: center;
     justify-content: center;
-
 }
 
 #balance {
@@ -153,9 +146,8 @@ header h2 {
 }
 
 .profile-purchases {
-    width: 400px;
+    width: 500px;
     height: 200px;
-
 }
 
 .purchases-header {
@@ -179,7 +171,7 @@ header h2 {
     height: 150px;
     
     display: grid;
-    grid-template-columns: repeat(5, 30px);
+    grid-template-columns: repeat(4, 100px);
     justify-content: space-around;
     place-items: center;
     
@@ -193,40 +185,31 @@ header h2 {
 }
 
 .item {
-    position: relative;
-    width: 60px;
-    height: 60px;
-
     margin-top: 5px;
     margin-bottom: 5px;
-
-    background-color: transparent;
 }
 
 .shop {
     width: 80%;
-    height: calc(120vh - 350px - 45px);
+    height: calc(130vh - 350px - 45px);
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 
     margin: 0 auto;
-    overflow-x: auto;
+    overflow-x: auto;   
+}
 
-    
+.shop::-webkit-scrollbar {
+    width: 0;
 }
 
 .shop-header {
     width: 100%;
-    height: 100px;
+    height: 80px;
 
     display: flex;
     align-items: center;
 
-   
     border-bottom: 5px solid #4b4b4b;
-  
 }
 
 .shop-header h1 {
@@ -235,19 +218,21 @@ header h2 {
 
 .shop-main {
     width: 100%;
-    height: auto;
-   
+    height: auto;  
 }
 
-.avatar-frames-conatainer {
+.avatar-frames-conatainer,
+.profile-backgrounds-conatainer
+.profile-badges-conatainer {
     width: 100%;
-    height: 150px;
+    min-height: 150px;
 }
 
-.avatar-frames-header {
+.avatar-frames-header,
+.profile-backgrounds-header,
+.profile-badges-header {
     width: 100%;
     height: 80px;
-
 
     display: flex;
     align-items: center;
@@ -255,15 +240,19 @@ header h2 {
     border-bottom: 5px solid #4b4b4b;
 }
 
-.avatar-frames-header h2 {
+.avatar-frames-header h2,
+.profile-backgrounds-header h2,
+.profile-badges-header h2  {
     color: #adadad;
 }
 
-.avatar-frames-items {
+.avatar-frames-items,
+.profile-backgrounds-items,
+.profile-badges-items {
     width: 100%;
-    height: calc(100% - 50px);
-
+    padding: 15px 0;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     gap: 30px;
 }
@@ -283,6 +272,30 @@ header h2 {
     transform: scale(1.05);
 }
 
+.profile-backgrounds-items__item,
+.profile-badges-items__item  {
+    width: 100px;
+    height: 60px;
+    position: relative;
+
+    margin-left: 5px;
+    background-color: transparent;
+    
+    background-size: cover;
+
+    cursor: pointer;
+}
+
+.profile-backgrounds-items__item:hover {
+    transform: scale(1.1);
+}
+
+.profile-badges-items__item  {
+    width: 60px;
+    height: 60px;
+
+    background-size: cover;
+}
 
 /* modal for items */
 .modal-item {
