@@ -26,38 +26,38 @@ const femaleInput = document.getElementById('femaleInput');
 
 
 const changeToLoginTemplate = () => {
-userNameInput.remove();
-userNameLabel.remove();
-repeatedPasswordInput.remove();
-repeatedPasswordLabel.remove();
-genderLabel.remove();
+    userNameInput.remove();
+    userNameLabel.remove();
+    repeatedPasswordInput.remove();
+    repeatedPasswordLabel.remove();
+    genderLabel.remove();
 
-haveAccountDiv.textContent = "Don't have an account?"
-haveAccountSpan.textContent = 'Registration here';
-authBtn.textContent = 'Login';
+    haveAccountDiv.textContent = "Don't have an account?"
+    haveAccountSpan.textContent = 'Registration here';
+    authBtn.textContent = 'Login';
 
-haveAccountDiv.append(haveAccountSpan);
+    haveAccountDiv.append(haveAccountSpan);
 
-registrHeader.textContent = "Login";
-registrSubheader.textContent = "Please login to your account";
+    registrHeader.textContent = "Login";
+    registrSubheader.textContent = "Please login to your account";
 }
 
 const changeToRegistrationTemplate = () => {
-console.log(registrationCardDiv);
-registrationCardDiv.insertBefore(userNameLabel, emailLabel);
-registrationCardDiv.insertBefore(userNameInput, emailLabel);
+    console.log(registrationCardDiv);
+    registrationCardDiv.insertBefore(userNameLabel, emailLabel);
+    registrationCardDiv.insertBefore(userNameInput, emailLabel);
 
-registrationCardDiv.insertBefore(repeatedPasswordLabel, authBtn);
-registrationCardDiv.insertBefore(repeatedPasswordInput, authBtn);
+    registrationCardDiv.insertBefore(repeatedPasswordLabel, authBtn);
+    registrationCardDiv.insertBefore(repeatedPasswordInput, authBtn);
 
-registrationCardDiv.insertBefore(genderLabel, authBtn);
+    registrationCardDiv.insertBefore(genderLabel, authBtn);
 
-haveAccountDiv.textContent = "Have an account?"
-haveAccountSpan.textContent = 'Login here';
+    haveAccountDiv.textContent = "Have an account?"
+    haveAccountSpan.textContent = 'Login here';
 
-authBtn.textContent = 'Registration';
-haveAccountSpan.textContent = "Login here";
-haveAccountDiv.append(haveAccountSpan);
+    authBtn.textContent = 'Registration';
+    haveAccountSpan.textContent = "Login here";
+    haveAccountDiv.append(haveAccountSpan);
 }
 
 
@@ -66,19 +66,35 @@ haveAccountSpan.textContent === 'Login here' ? changeToLoginTemplate() : changeT
 });
 
 const changesWithMaleRadio = () => {
-maleInput.checked = true;
-maleDiv.style.borderColor = '#8769FD';
-maleDiv.style.color = '#8769FD';
+    maleInput.checked = true;
+    maleDiv.style.borderColor = '#8769FD';
+    maleDiv.style.color = '#8769FD';
 }
 
 const changesWithFemaleRadio = () => {
-femaleInput.checked = true;
-femaleDiv.style.borderColor = '#8769FD';
-femaleDiv.style.color = '#8769FD';
+    femaleInput.checked = true;
+    femaleDiv.style.borderColor = '#8769FD';
+    femaleDiv.style.color = '#8769FD';
 }
 
 maleDiv.addEventListener('click', changesWithMaleRadio);
 femaleDiv.addEventListener('click', changesWithFemaleRadio);
+
+
+const checkFields = () => {
+    if (authBtn.innerText === 'Registration') {
+        if (userNameInput.value.length <= 3 || userNameInput.value.length >= 20 || userNameInput.value == null) {
+            alert('error');
+        } else {
+            alert('ok');
+        }
+
+    } else {
+        alert('ne ta button')
+    }
+}
+
+authBtn.addEventListener('click', checkFields);
 
 
 
@@ -153,7 +169,7 @@ femaleDiv.addEventListener('click', changesWithFemaleRadio);
 // labels[3].remove();
 // labels[4].remove();
 //
-labels[5].remove();
+//labels[5].remove();
 // });
 
 // }
