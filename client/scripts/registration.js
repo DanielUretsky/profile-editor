@@ -73,13 +73,14 @@ const changesWithRadio = (property) => {
         property.style.borderColor = '#8769FD';
         property.style.color = '#8769FD';
         femaleDiv.style.borderColor = "#2C2C2C";
-        femaleDiv.style.сolor = "#2C2C2C";
+        femaleDiv.style.color = "#2C2C2C";
+        
     } else if (property.id == 'femaleDiv') {
         femaleInput.checked = true;
         property.style.borderColor = '#8769FD';
         property.style.color = '#8769FD';
         maleDiv.style.borderColor = "#2C2C2C";
-        maleDiv.style.сolor = "#2C2C2C";
+        maleDiv.style.color = "#2C2C2C";
     }
 }
 
