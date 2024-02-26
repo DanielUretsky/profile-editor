@@ -65,20 +65,26 @@ haveAccountSpan.addEventListener('click', () => {
 haveAccountSpan.textContent === 'Login here' ? changeToLoginTemplate() : changeToRegistrationTemplate()
 });
 
-const changesWithMaleRadio = () => {
-    maleInput.checked = true;
-    maleDiv.style.borderColor = '#8769FD';
-    maleDiv.style.color = '#8769FD';
+
+
+const changesWithRadio = (property) => {
+    if (property.id == 'maleDiv') {
+        maleInput.checked = true;
+        property.style.borderColor = '#8769FD';
+        property.style.color = '#8769FD';
+        femaleDiv.style.borderColor = "#2C2C2C";
+        femaleDiv.style.сolor = "#2C2C2C";
+    } else if (property.id == 'femaleDiv') {
+        femaleInput.checked = true;
+        property.style.borderColor = '#8769FD';
+        property.style.color = '#8769FD';
+        maleDiv.style.borderColor = "#2C2C2C";
+        maleDiv.style.сolor = "#2C2C2C";
+    }
 }
 
-const changesWithFemaleRadio = () => {
-    femaleInput.checked = true;
-    femaleDiv.style.borderColor = '#8769FD';
-    femaleDiv.style.color = '#8769FD';
-}
-
-maleDiv.addEventListener('click', changesWithMaleRadio);
-femaleDiv.addEventListener('click', changesWithFemaleRadio);
+maleDiv.addEventListener('click', () => changesWithRadio(maleDiv));
+femaleDiv.addEventListener('click', () => changesWithRadio(femaleDiv));
 
 
 const checkFields = () => {
@@ -111,7 +117,7 @@ const checkFields = () => {
             repeatedPasswordInput.style.border = '1px solid #8769FD';
         }
 
-        if (maleInput.checked === false || femaleInput.checked === false) {
+        if (!maleInput.checked  && !femaleInput.checked) {
             alert('your gender?'); 
         }
 
