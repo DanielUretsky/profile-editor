@@ -19,10 +19,11 @@ const repeatedPasswordLabel = document.getElementById("repeatedPasswordLabel");
 
 const genderLabel = document.getElementById("gender");
 
-const maleDiv = document.getElementById("maleDiv");
-const femaleDiv = document.getElementById("femaleDiv");
-const maleInput = document.getElementById("maleInput");
-const femaleInput = document.getElementById("femaleInput");
+const maleDiv = document.getElementById('maleDiv');
+const femaleDiv = document.getElementById('femaleDiv');
+const maleInput = document.getElementById('maleInput');
+const femaleInput = document.getElementById('femaleInput');
+
 
 const changeToLoginTemplate = () => {
     userNameInput.remove();
@@ -58,19 +59,70 @@ const changeToRegistrationTemplate = () => {
     haveAccountSpan.textContent = "Login here";
     haveAccountDiv.append(haveAccountSpan);
 }
-    
+
 
 haveAccountSpan.addEventListener('click', () => {
-    haveAccountSpan.textContent === 'Login here' ? changeToLoginTemplate() : changeToRegistrationTemplate()
+haveAccountSpan.textContent === 'Login here' ? changeToLoginTemplate() : changeToRegistrationTemplate()
 });
 
-const genderHandler = () => {
-    maleInput.checked = true; 
+const changesWithMaleRadio = () => {
+    maleInput.checked = true;
     maleDiv.style.borderColor = '#8769FD';
-    
+    maleDiv.style.color = '#8769FD';
 }
 
-maleDiv.addEventListener('click', genderHandler);
+const changesWithFemaleRadio = () => {
+    femaleInput.checked = true;
+    femaleDiv.style.borderColor = '#8769FD';
+    femaleDiv.style.color = '#8769FD';
+}
+
+maleDiv.addEventListener('click', changesWithMaleRadio);
+femaleDiv.addEventListener('click', changesWithFemaleRadio);
+
+
+const checkFields = () => {
+    if (authBtn.innerText === 'Registration') {
+        if (userNameInput.value.length <= 3 || userNameInput.value.length >= 20 || userNameInput.value == null) {
+            userNameInput.style.border = '1px solid red';
+            alert('username error');
+        } else {
+            userNameInput.style.border = '1px solid #8769FD';
+        }
+
+        if (emailInput.value.includes('@gmail.com') || emailInput.value.includes('@mail.ru') || emailInput.value.includes('@rambler.ru')) {
+            emailInput.style.border = '1px solid #8769FD';
+        } else {
+            alert('email error');
+            emailInput.style.border = '1px solid red';
+        }
+
+        if (passwordInput.value.length < 8 || passwordInput.value == null) {
+            alert('password error');
+            passwordInput.style.border = '1px solid red';
+        } else {
+            passwordInput.style.border = '1px solid #8769FD';
+        }
+
+        if (passwordInput.value !== repeatedPasswordInput.value || repeatedPasswordInput.value == null) {
+            alert('Пароли не совпадают!');
+            repeatedPasswordInput.style.border = '1px solid red';
+        } else {
+            repeatedPasswordInput.style.border = '1px solid #8769FD';
+        }
+
+        if (maleInput.checked === false || femaleInput.checked === false) {
+            alert('your gender?'); 
+        }
+
+    } else {
+        alert('ne ta button')
+    }
+}
+
+authBtn.addEventListener('click', checkFields);
+
+
 
 
 
@@ -112,77 +164,75 @@ maleDiv.addEventListener('click', genderHandler);
 
 
 // const changes = function() {
-//     registrHeader.textContent = 'Please, Login';
-//     registrSubheader.textContent = 'To get started, you need to log in';
+// registrHeader.textContent = 'Please, Login';
+// registrSubheader.textContent = 'To get started, you need to log in';
 
-//     marker.textContent = 'Need to create an account?';
-//     logOut.textContent = ' Registration';
+// marker.textContent = 'Need to create an account?';
+// logOut.textContent = ' Registration';
 
-//     marker.append(logOut);
-
-
-//     logInBtn.classList.add('regist-button');
-//     logInBtn.textContent = 'logIn';
-//     parent.append(logInBtn);
-//     parent.insertBefore(logInBtn, marker);
-    
-//     if(logInBtn) {
-//         logOutBtn.remove();
-//     } 
+// marker.append(logOut);
 
 
-//     inputs.forEach(() => {
-//         inputs[0].remove();
-//         inputs[3].remove();
-//         inputs[4].remove();
-//         inputs[5].remove();
-//     });
+// logInBtn.classList.add('regist-button');
+// logInBtn.textContent = 'logIn';
+// parent.append(logInBtn);
+// parent.insertBefore(logInBtn, marker);
 
-//     labels.forEach(() =>{
-//         labels[0].remove();
-//         labels[3].remove();
-//         labels[4].remove();
-//         labels[5].remove();
-//     });
+// if(logInBtn) {
+// logOutBtn.remove();
+// }
+
+
+// inputs.forEach(() => {
+// inputs[0].remove();
+// inputs[3].remove();
+// inputs[4].remove();
+// inputs[5].remove();
+// });
+
+// labels.forEach(() =>{
+// labels[0].remove();
+// labels[3].remove();
+// labels[4].remove();
+//
+//labels[5].remove();
+// });
 
 // }
 
 
 
 // logOut.addEventListener('click', () => {
-//     registrHeader.textContent = 'Create an account';
-//     registrSubheader.textContent = 'to get started, you need to create an account';
-//     marker.textContent = 'Have already an account? ';
-//     haveAccount.textContent = ' Login here';
-//     marker.append(haveAccount);
+// registrHeader.textContent = 'Create an account';
+// registrSubheader.textContent = 'to get started, you need to create an account';
+// marker.textContent = 'Have already an account? ';
+// haveAccount.textContent = ' Login here';
+// marker.append(haveAccount);
 
-//     parent.append(logOutBtn);
-//     parent.insertBefore(logOutBtn, marker);
+// parent.append(logOutBtn);
+// parent.insertBefore(logOutBtn, marker);
 
-//     if(logOutBtn) {
-//         logInBtn.remove();
-//     }
-//     addElements();
+// if(logOutBtn) {
+// logInBtn.remove();
+// }
+// addElements();
 
-    
+
 // });
 
 // function addElements() {
-//     let labels = ['UserName', 'Re-enter password', 'Choose gender'];
-    
-//     for(let i = 0; i < labels.length; i++) {
-//         for(let j = 1; j < 2; j++) {
-//             let label = document.createElement('label');
-//             label.classList.add('registr-card-name');
-//             label.textContent = labels[i];
-//             parent.append(label);
-//             let input = document.createElement('input');
-//             input.classList.add('main');
-//             parent.append(input);
-//         }
-//     }
+// let labels = ['UserName', 'Re-enter password', 'Choose gender'];
 
+// for(let i = 0; i < labels.length; i++) {
+// for(let j = 1; j < 2; j++) {
+// let label = document.createElement('label');
+// label.classList.add('registr-card-name');
+// label.textContent = labels[i];
+// parent.append(label);
+// let input = document.createElement('input');
+// input.classList.add('main');
+// parent.append(input);
+// }
 // }
 
-
-
+// }
