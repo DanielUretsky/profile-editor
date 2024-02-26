@@ -84,9 +84,35 @@ femaleDiv.addEventListener('click', changesWithFemaleRadio);
 const checkFields = () => {
     if (authBtn.innerText === 'Registration') {
         if (userNameInput.value.length <= 3 || userNameInput.value.length >= 20 || userNameInput.value == null) {
-            alert('error');
+            userNameInput.style.border = '1px solid red';
+            alert('username error');
         } else {
-            alert('ok');
+            userNameInput.style.border = '1px solid #8769FD';
+        }
+
+        if (emailInput.value.includes('@gmail.com') || emailInput.value.includes('@mail.ru') || emailInput.value.includes('@rambler.ru')) {
+            emailInput.style.border = '1px solid #8769FD';
+        } else {
+            alert('email error');
+            emailInput.style.border = '1px solid red';
+        }
+
+        if (passwordInput.value.length < 8 || passwordInput.value == null) {
+            alert('password error');
+            passwordInput.style.border = '1px solid red';
+        } else {
+            passwordInput.style.border = '1px solid #8769FD';
+        }
+
+        if (passwordInput.value !== repeatedPasswordInput.value || repeatedPasswordInput.value == null) {
+            alert('Пароли не совпадают!');
+            repeatedPasswordInput.style.border = '1px solid red';
+        } else {
+            repeatedPasswordInput.style.border = '1px solid #8769FD';
+        }
+
+        if (maleInput.checked === false || femaleInput.checked === false) {
+            alert('your gender?'); 
         }
 
     } else {
