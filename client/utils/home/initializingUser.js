@@ -1,5 +1,6 @@
-import {createModalItem, removeModalItem} from './modalItem.js'
+import {createModalItem, removeModalItem, createAvatarModel, removeAvatarModel} from '../home/modals.js'
 
+export const userAvatarDiv = document.getElementById("userAvatar");
 const usernameSpan = document.getElementById("username");
 const emailSpan = document.getElementById("email");
 const genderSpan = document.getElementById("gender");
@@ -7,10 +8,19 @@ const genderSpan = document.getElementById("gender");
 const userBalanceParagraph = document.getElementById("balance");
 const userItemsDiv = document.getElementById("userItems");
 
+
+export const getUserItems = async () => {
+    const response = await fetch('http://localhost:4000/users/userPurchases/65dd2a03d3b100b764fddf71', {
+        method: "GET",
+    });
+    return await response.json();
+    
+}
+
 export const initializeUser = async () => {
     try {
        
-        const response = await fetch('http://localhost:4000/users/65d937ddcdad3418c9a29965', {
+        const response = await fetch('http://localhost:4000/users/65dd2a03d3b100b764fddf71', {
             method: "GET",
         });
 
@@ -30,6 +40,14 @@ export const initializeUserInitials = async (user) => {
     usernameSpan.innerText = user.username;
     emailSpan.innerText = user.email;
     genderSpan.innerText = user.gender;
+    
+};
+
+export const initializeUserAvatar = async(image) => {
+    if(image) {
+        userAvatarDiv.style.backgroundImage = `url('${image}')`;
+        userAvatarDiv.style.backgroundSize = '100% 100%'
+    }
 };
  
 export const initilizeUserBalance = async (coinsBalance) => {
@@ -37,11 +55,7 @@ export const initilizeUserBalance = async (coinsBalance) => {
 };
 
 export const initilizeUserPurchases = async () => {
-    const response = await fetch('http://localhost:4000/users/userPurchases/65d937ddcdad3418c9a29965', {
-        method: "GET",
-    });
-    const purchases = await response.json();
-    
+    const purchases = await getUserItems();
     if (purchases.length === 0) {
         userItemsDiv.style.gridTemplateColumns = "1fr"
         userItemsDiv.innerText = 'Your back is empty :('
@@ -49,7 +63,7 @@ export const initilizeUserPurchases = async () => {
     };
 
     userItemsDiv.innerHTML = "";
-    purchases.forEach(purchase => {
+    purchases.forEach(purchase => { 
         const purchaseDiv = document.createElement("div");
         purchaseDiv.classList.add("item");
 
@@ -72,3 +86,6 @@ export const initilizeUserPurchases = async () => {
         purchaseDiv.addEventListener("mouseleave", (e) => removeModalItem(e));
     });
 };
+
+userAvatarDiv.addEventListener('mouseenter', createAvatarModel);
+userAvatarDiv.addEventListener('mouseleave', (e) => removeAvatarModel(e));
