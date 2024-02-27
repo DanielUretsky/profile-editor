@@ -86,5 +86,6 @@ export const createAvatarModel = () => {
 }
 
 export const removeAvatarModel = (e) => {
+    
     e.target.querySelector('.avatar-modal').remove();
 }
