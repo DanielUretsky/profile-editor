@@ -1,4 +1,4 @@
-import {createModalItem, removeModalItem} from './modalItem.js'
+import {createModalItem, removeModalItem} from './modals.js'
 
 const avatarFramesItemsdDiv = document.getElementById("avatarFramesItems");
 const profileBackgroundItemsdDiv = document.getElementById("profileBackgroundItems");
@@ -15,14 +15,14 @@ export const getAvatarFrames = async () => {
 export const getProfileBackgrounds = async () => {
     const response = await fetch('http://localhost:4000/products/profileBackground');
     const prodileBackgrounds = await response.json();
-    console.log(prodileBackgrounds);
+   
     return prodileBackgrounds;
 }
 
 export const getProfileBadges = async () => {
     const response = await fetch('http://localhost:4000/products/profileBadge');
     const profileBadges = await response.json();
-    console.log(profileBadges);
+  
     return profileBadges;
 }
 
