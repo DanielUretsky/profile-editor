@@ -1,4 +1,4 @@
-import {initilizeUserPurchases, initilizeUserBalance} from './initializingUser.js'
+import {initilizeUserPurchases, initilizeUserBalance, getUserItems, initializeUserAvatar} from './initializingUser.js'
 
 export const sellItemHandler = async (item) => {
     console.log(item);
@@ -6,7 +6,7 @@ export const sellItemHandler = async (item) => {
     const deletedItem = {
         id: item._id,
         price: item.price,
-        user: "65d937ddcdad3418c9a29965"
+        user: "65dd2a03d3b100b764fddf71"
     }
 
     const response = await fetch("http://localhost:4000/products/sellProduct", {
@@ -27,11 +27,16 @@ export const sellItemHandler = async (item) => {
 
 export const buyItemHandler = async (item) => {
     const purchasedItem = {
+        externalID: item.id,
         type: item.type,
         price: item.price,
         properties: item.properties,
-        user: "65d937ddcdad3418c9a29965"
+        user: "65dd2a03d3b100b764fddf71"
     }
+    const userPurchases = await getUserItems();
+    const isEquiped = userPurchases.find(purchase => purchase.externalID === purchasedItem.externalID);
+
+    if(isEquiped) return alert('You have already purchased this item');
 
     const response = await fetch("http://localhost:4000/products/buyProduct", {
         method: "POST",
@@ -49,7 +54,6 @@ export const buyItemHandler = async (item) => {
 };
 
 export const equipItemHandler = (item) => {
-    console.log(item);
     if(item.type === "avatarFrame"){
         const userAvatarDiv = document.getElementById("userAvatar");
         userAvatarDiv.style.boxShadow = item.properties.css['box-shadow']; 
@@ -67,5 +71,19 @@ export const equipItemHandler = (item) => {
         usernameImage.classList.add("username-image")
         usernameDiv.append(usernameImage);
     }
-    
+}
+
+export const uploadUserImage = async (imageBase64) => {
+    const response = await fetch("http://localhost:4000/users/uploadImage/65dd2a03d3b100b764fddf71", {
+        method: "POST",
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({imageBase64})
+    });
+
+    const data = await response.text();
+
+    await initializeUserAvatar(imageBase64);
 }
