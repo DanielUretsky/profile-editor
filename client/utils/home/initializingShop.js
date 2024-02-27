@@ -75,5 +75,5 @@ export const showProfileBadges = async () => {
 
         itemDiv.addEventListener("mouseenter", () => createModalItem(itemDiv, item));
         itemDiv.addEventListener("mouseleave", (e) => removeModalItem(e));
-    })
+    });
 }
