@@ -23,8 +23,19 @@ router.get('/userPurchases/:id', async (req, res) => {
     }
 });
 
+router.post('/uploadImage/:id', async (req, res) => {
+    try {
+        const id = req.params.id;
+        const imageBase64 = req.body.imageBase64;
+        console.log(imageBase64);
+        const response = await usersBll.uploadUserImage(id, imageBase64);
+        res.send(response);
+    } catch (err) {
+        console.log(err);
+    }
+})
 
 
 
- 
+  
 module.exports = router;
