@@ -1,4 +1,4 @@
-import { initializeUser, initializeUserInitials, initilizeUserPurchases, initilizeUserBalance } from '../utils/home/initializingUser.js'
+import { initializeUser, initializeUserAvatar, initializeUserInitials, initilizeUserPurchases, initilizeUserBalance } from '../utils/home/initializingUser.js'
 import { initializeShop, showAvatarFrames, showProfileBckgrounds, showProfileBadges} from '../utils/home/initializingShop.js'
 
 // const usernameSpan = document.getElementById("username");
@@ -13,6 +13,7 @@ import { initializeShop, showAvatarFrames, showProfileBckgrounds, showProfileBad
 /* --start-- */
 initializeUser()
     .then(user => initializeUserInitials(user)
+        .then(() => initializeUserAvatar(user.image))
         .then(() => initilizeUserBalance(user.coinsBalance))
         .then(() => initilizeUserPurchases())
         .catch(err => console.log(err)))
@@ -23,3 +24,5 @@ initializeShop()
     .then(() => showProfileBckgrounds())
     .then(() => showProfileBadges())
     .catch(err => console.log(err))
+
+
