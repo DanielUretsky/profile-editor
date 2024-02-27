@@ -24,6 +24,10 @@ const femaleDiv = document.getElementById('femaleDiv');
 const maleInput = document.getElementById('maleInput');
 const femaleInput = document.getElementById('femaleInput');
 
+const error = document.getElementById('error');
+
+
+
 
 const changeToLoginTemplate = () => {
     userNameInput.remove();
@@ -88,11 +92,13 @@ maleDiv.addEventListener('click', () => changesWithRadio(maleDiv));
 femaleDiv.addEventListener('click', () => changesWithRadio(femaleDiv));
 
 
+
 const checkFields = () => {
+    let errors = [];
     if (authBtn.innerText === 'Registration') {
         if (userNameInput.value.length <= 3 || userNameInput.value.length >= 20 || userNameInput.value == null) {
             userNameInput.style.border = '1px solid red';
-            alert('username error');
+            errors.push('The username must be between 3 and 20 characters. The field must not be empty!');
         } else {
             userNameInput.style.border = '1px solid #8769FD';
         }
@@ -100,27 +106,30 @@ const checkFields = () => {
         if (emailInput.value.includes('@gmail.com') || emailInput.value.includes('@mail.ru') || emailInput.value.includes('@rambler.ru')) {
             emailInput.style.border = '1px solid #8769FD';
         } else {
-            alert('email error');
+            errors.push('Email must contain the special symbol @. The field must not be empty!');
             emailInput.style.border = '1px solid red';
         }
 
         if (passwordInput.value.length < 8 || passwordInput.value == null) {
-            alert('password error');
+            errors.push('The password must be at least 8 characters The field must not be empty!');
             passwordInput.style.border = '1px solid red';
         } else {
             passwordInput.style.border = '1px solid #8769FD';
         }
 
         if (passwordInput.value !== repeatedPasswordInput.value || repeatedPasswordInput.value == null) {
-            alert('Пароли не совпадают!');
+            errors.push('Passwords are not the same');
             repeatedPasswordInput.style.border = '1px solid red';
         } else {
             repeatedPasswordInput.style.border = '1px solid #8769FD';
         }
 
         if (!maleInput.checked  && !femaleInput.checked) {
-            alert('your gender?'); 
+            errors.push('Enter your gender'); 
+        } else {
         }
+
+        error.textContent = errors.join(' ');
 
     } else {
         alert('ne ta button')
