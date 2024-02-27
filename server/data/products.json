@@ -3,7 +3,6 @@
         {
             "id": 1,
             "type": "avatarFrame",
-            "name": "Purple Neon",
             "price": 20,
             "properties": {
                 "css": {
@@ -14,25 +13,22 @@
         {
             "id": 2,
             "type": "profileBackground",
-            "name": "Skeleton background",
             "price": 30,
             "properties": {
-                "src": ""
+                "url": "https://wallpapers.com/images/hd/profile-background-b5vedq7mz8mjvslu.jpg"
             }
         },
         {
             "id": 3,
-            "type": "ProfileBadge",
-            "name": "Gradien parrot",
+            "type": "profileBadge",
             "price": 20,
             "properties": {
-                "src": "https://i.gifer.com/6oa.gif"
+                "url": "https://i.gifer.com/XOsX.gif"
             }
         },
         {
             "id": 4,
             "type": "avatarFrame",
-            "name": "Red Neon",
             "price": 12,
             "properties": {
                 "css": {
@@ -43,7 +39,6 @@
         {
             "id": 5,
             "type": "avatarFrame",
-            "name": "Green Neon",
             "price": 15,
             "properties": {
                 "css": {
@@ -52,15 +47,103 @@
             }
         },
         {
-            "id": 5,
+            "id": 6,
             "type": "avatarFrame",
-            "name": "Blue Neon",
             "price": 22,
             "properties": {
                 "css": {
                     "box-shadow": "0 0 .1rem #fff, 0 0 .1rem #fff, 0 0 .1rem #2723f5, 0 0 0.1rem #2723f5, 0 0 0.7rem #2723f5, inset 0 0 .2rem #2723f5"
                 }
             } 
+        },
+        {
+            "id": 7,
+            "type": "profileBackground",
+            "price": 22,
+            "properties": {
+                "url": "https://a-static.besthdwallpaper.com/retro-design-wallpaper-2560x1080-30560_14.jpg"
+            } 
+        },
+        {
+            "id": 8,
+            "type": "profileBackground",
+            "price": 22,
+            "properties": {
+                "url": "https://cdn.wallpapersafari.com/53/0/P1zny3.jpg"
+            } 
+        },
+        {
+            "id": 9,
+            "type": "profileBackground",
+            "price": 22,
+            "properties": {
+                "url": "https://images4.alphacoders.com/129/1297452.png"
+            } 
+        },
+        {
+            "id": 10,
+            "type": "profileBackground",
+            "price": 22,
+            "properties": {
+                "url": "https://i.pinimg.com/originals/2b/66/01/2b66016d5a1e2d230ecce59f8e673382.png"
+            } 
+        },
+        {
+            "id": 11,
+            "type": "profileBackground",
+            "price": 22,
+            "properties": {
+                "url": "https://wallpapersmug.com/download/2560x1080/7d1341/desert-landscape-starry-night-art.jpg"
+            } 
+        },
+        {
+            "id": 12,
+            "type": "profileBackground",
+            "price": 22,
+            "properties": {
+                "url": "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExcnNicHYyMXY0eGZuN2FvdmFlYjJwaTFtdGRpNHRkbWRuMGtvOXFydCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/QrU69LU0LIuYJ9OQ4C/giphy.gif"
+            } 
+        },
+        {
+            "id": 13,
+            "type": "profileBackground",
+            "price": 22,
+            "properties": {
+                "url": "https://media1.giphy.com/media/ccKEsBDAAQTrutQ9LA/giphy.gif?cid=ecf05e47uql1iyywv6y8i5b8g9n3u2i2ww6sp75tua34tx76&ep=v1_gifs_related&rid=giphy.gif&ct=g"
+            } 
+        },
+        {
+            "id": 14,
+            "type": "profileBackground",
+            "price": 22,
+            "properties": {
+                "url": "https://media1.giphy.com/media/Y1N6BcOA1uHBVGwQcg/giphy.gif?cid=ecf05e47vzls4qr9r8gvpdmu3eqnlciadi5zh5sv3xncnbhz&ep=v1_gifs_related&rid=giphy.gif&ct=g"
+            } 
+        },
+        {
+            "id": 15,
+            "type": "profileBackground",
+            "price": 22,
+            "properties": {
+                "url": "https://media2.giphy.com/media/JRw5mTzgbDceDEehVB/giphy.gif?cid=ecf05e47vzls4qr9r8gvpdmu3eqnlciadi5zh5sv3xncnbhz&ep=v1_gifs_related&rid=giphy.gif&ct=g"
+            } 
+        },
+        {
+            "id": 16,
+            "type": "profileBackground",
+            "price": 22,
+            "properties": {
+                "url": "https://media4.giphy.com/media/keZjyMTjsMlqIWGimD/giphy.gif?cid=ecf05e4715lsx0rmq257qdstef52cedksxra839ennkngtwz&ep=v1_gifs_related&rid=giphy.gif&ct=g"
+            } 
+        },
+        {
+            "id": 17,
+            "type": "profileBadge",
+            "price": 20,
+            "properties": {
+                "url": "https://storage.ko-fi.com/cdn/useruploads/post/f3a7c679-71ef-4bc1-800a-f34284f6d9e6_chimkennuggetrestgif.gif"
+            }
         }
     ]
 }
+
