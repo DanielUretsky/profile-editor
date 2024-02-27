@@ -122,3 +122,11 @@
     accent-color: var(--color);
 }
 
+
+.error {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 12px;
+    color: red;
+    font-weight: 300;
+}
