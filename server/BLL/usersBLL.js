@@ -12,7 +12,7 @@ const getOneUser = async (id) => {
     }
 }
 
-const getUserPurchases = async (id) => {
+const getUserPurchases = async (id) => { 
     try {
         const purchases = await purchaseModel.find({user: id});
         return purchases;
@@ -22,8 +22,21 @@ const getUserPurchases = async (id) => {
     }
 }
 
+const uploadUserImage = async (id, base64) => {
+    try {
+        const user = await userModel.findOne({ _id: id });
+        user.image = base64;
+
+        await user.save();
+        return "Uploaded";
+    } catch (err) {
+        console.log(err);
+    }
+}
+
 module.exports = {
     
     getOneUser,
-    getUserPurchases
+    getUserPurchases,
+    uploadUserImage
 } 
