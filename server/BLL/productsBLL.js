@@ -30,16 +30,14 @@ const buyProduct = async(product) => {
         console.log(err);
     }
 }
-
+ 
 const sellProduct = async(product) => {
     try {
         const user = await userModel.findOne({_id : product.user});
         await purchaseModel.findByIdAndDelete(product.id);
-        console.log(product);
-        console.log(typeof product.price);
+    
         user.coinsBalance += +product.price;
-        
-        await user.save();
+        await user.save(); 
       
         return {userBalance: user.coinsBalance}
     } catch (err) {
@@ -52,4 +50,4 @@ module.exports = {
     getProductByType,
     buyProduct,
     sellProduct
-}
+} 
