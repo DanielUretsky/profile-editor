@@ -80,11 +80,12 @@ header h2 {
 }
 
 .user #userAvatar {
+    position: relative;
     width: 110px;
     height: 110px;
     
     background-image: url('../../assets/icons/user.png');
-    background-size: 80% 80%;
+    background-size: 90% 90%;
     background-repeat: no-repeat;
     background-position: center;
     
@@ -326,6 +327,22 @@ header h2 {
     background-color: #4b4b4b;
     border: none;
     color: white;
+
+    cursor: pointer;
+}
+
+.avatar-modal {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0, 0, 0, 0.322);
+}
+
+.uload-image-icon {
+    width: 50px;
+    height: 50px;
 
     cursor: pointer;
 }
