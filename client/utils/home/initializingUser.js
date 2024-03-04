@@ -1,13 +1,20 @@
-import {createModalItem, removeModalItem, createAvatarModel, removeAvatarModel} from '../home/modals.js'
+import {
+        createModalItem, 
+        removeModalItem, 
+        createAvatarModel, 
+        removeAvatarModel,
+        createUserInitialsModal
+    } from '../home/modals.js';
 
 export const userAvatarDiv = document.getElementById("userAvatar");
+
+const editUserInitilsIcon = document.getElementById("editUserInitilsIcon");
 const usernameSpan = document.getElementById("username");
 const emailSpan = document.getElementById("email");
 const genderSpan = document.getElementById("gender");
 
 const userBalanceParagraph = document.getElementById("balance");
 const userItemsDiv = document.getElementById("userItems");
-
 
 export const getUserItems = async () => {
     const response = await fetch('http://localhost:4000/users/userPurchases/65dd2a03d3b100b764fddf71', {
@@ -89,3 +96,4 @@ export const initilizeUserPurchases = async () => {
 
 userAvatarDiv.addEventListener('mouseenter', createAvatarModel);
 userAvatarDiv.addEventListener('mouseleave', (e) => removeAvatarModel(e));
+editUserInitilsIcon.addEventListener("click", createUserInitialsModal)
