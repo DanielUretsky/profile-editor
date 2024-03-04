@@ -1,6 +1,8 @@
 import {sellItemHandler, buyItemHandler, equipItemHandler, uploadUserImage} from './userActions.js';
 import {userAvatarDiv} from './initializingUser.js';
 
+
+
 export const createModalItem = (itemDiv, itemInfo) => {
     const modalDiv = document.createElement("div");
     const itemPriceSpan = document.createElement("span");
@@ -60,32 +62,88 @@ export const createAvatarModel = () => {
     uloadImageInput.id = 'uploadImage';
     uloadImageLabel.htmlFor = 'uploadImage';
     
-
     uloadImageLabel.append(uloadImageIcon);
-
     avatarModalDiv.append(uloadImageLabel);
     avatarModalDiv.append(uloadImageInput);
-
     userAvatarDiv.append(avatarModalDiv);
 
     uloadImageInput.addEventListener('change', (e) => {
-        
         const file = uloadImageInput.files[0];
         const reader = new FileReader();
 
         reader.addEventListener("load", async() => {
-            // Base64 Data URL 👇
-            console.log(reader.result);
             await uploadUserImage(reader.result);
-           
         });
     
        reader.readAsDataURL(file)
-    })
-
+    });
 }
 
 export const removeAvatarModel = (e) => {
-    
     e.target.querySelector('.avatar-modal').remove();
+}
+
+
+export const createUserInitialsModal = () => {
+    const userInitilasModalDiv = document.createElement("div");
+    const modalContainerDiv = document.createElement("div");
+    const modalContainerHeaderDiv = document.createElement("div");
+    const modalContainerHeader = document.createElement("h2");
+    const modalContainerInputsDiv = document.createElement("div");
+    
+    const usernameInputLabel = document.createElement("label");
+    const emailInputLabel = document.createElement("label");
+    const genderSelectLabel = document.createElement("label");
+
+    const usernameInput = document.createElement("input");
+    const emailInput = document.createElement("input");
+    const genderSelect = document.createElement("select");
+    const genderMaleOption = document.createElement("option");
+    const genderFemaleOption = document.createElement("option");
+
+    const saveChangesButton = document.createElement("button");
+
+    userInitilasModalDiv.classList.add("user-initilas-modal");
+    modalContainerDiv.classList.add("user-initials-modal-container");
+    modalContainerHeaderDiv.classList.add("user-initials-modal-header");
+    modalContainerInputsDiv.classList.add("user-initials-modal-inputs");
+    
+    usernameInput.id = "usernameModal";
+    emailInput.id = "emailModal";
+    genderSelect.id = "usernameModal";
+
+    usernameInputLabel.htmlFor = "usernameModal";
+    emailInputLabel.htmlFor = "emailModal";
+    genderSelectLabel.htmlFor = "usernameModal";
+    usernameInputLabel.textContent = "Username";
+    emailInputLabel.textContent = "Email";
+    genderSelectLabel.textContent = "Gender";
+    genderMaleOption.textContent = "Male";
+    genderFemaleOption.textContent = "Female";
+    genderMaleOption.value = "Male";
+    genderFemaleOption.value = "Female";
+
+    genderSelect.append(genderMaleOption);
+    genderSelect.append(genderFemaleOption);
+
+    modalContainerHeader.textContent = "Edit:"
+
+    modalContainerHeaderDiv.append(modalContainerHeader);
+
+    modalContainerInputsDiv.append(usernameInputLabel)
+    modalContainerInputsDiv.append(usernameInput)
+
+    modalContainerInputsDiv.append(emailInputLabel)
+    modalContainerInputsDiv.append(emailInput)
+    
+    modalContainerInputsDiv.append(genderSelectLabel)
+    modalContainerInputsDiv.append(genderSelect)
+
+    modalContainerDiv.append(modalContainerHeaderDiv);
+    modalContainerDiv.append(modalContainerInputsDiv);
+    userInitilasModalDiv.append(modalContainerDiv);
+    
+
+    document.body.append(userInitilasModalDiv)
+    //saveChangesButton.addEventListener("click", )
 }
