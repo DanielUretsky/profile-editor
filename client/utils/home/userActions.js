@@ -63,13 +63,10 @@ export const equipItemHandler = (item) => {
         profileBgLayoutDiv.style.backgroundImage = `url('${item.properties.url}')`;
     }
     if(item.type === "profileBadge"){
-        const usernameDiv = document.getElementById("usernameDiv");
-        const usernameImage = document.createElement("img");
-        
-        usernameImage.src = item.properties.url;
+        const profileBadgedDiv = document.getElementById("profileBadge");
 
-        usernameImage.classList.add("username-image")
-        usernameDiv.append(usernameImage);
+        profileBadgedDiv.style.backgroundImage = `url('${item.properties.url}')`;
+        profileBadgedDiv.classList.add("username-image")
     }
 }
 
