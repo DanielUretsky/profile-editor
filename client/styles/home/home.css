@@ -93,6 +93,8 @@ header h2 {
 }
 
 .user .user-initials {
+    position: relative;
+    
     min-width: 150px;
     height: 120px;
 
@@ -102,6 +104,14 @@ header h2 {
 
     color: rgb(204, 204, 204);
     text-shadow: rgb(0, 0, 0) 1px 0 10px;
+}
+
+#editUserInitilsIcon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 25px;
+    height: 25px;
 }
 
 .username {
@@ -115,6 +125,9 @@ header h2 {
 .username-image {
     width: 30px;
     height: 30px;
+
+    background-size: cover;
+    background-position: center;
 }
 
 .profile-info {
@@ -345,4 +358,50 @@ header h2 {
     height: 50px;
 
     cursor: pointer;
+}
+
+.user-initilas-modal {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: rgba(0, 0, 0, 0.322);
+}
+
+.user-initials-modal-container {
+    width: 350px;
+    height: 200px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    background-color: #414141;
+}
+
+.user-initials-modal-header {
+    width: 90%;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+
+    border-bottom: 2px solid;
+    color: white;
+}
+
+.user-initials-modal-inputs {
+    width: 90%;
+    height: 150px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    background-color: #adadad;
 }
